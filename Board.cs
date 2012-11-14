@@ -7,5 +7,10 @@ namespace TTTANE
 {
     class Board
     {
+        public String BoardStatus{ get; set; }
+
+        //upphafsstilling
+        //drawboard
+
     }
 }
