@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTT", "TTT.csproj", "{E59E4F9A-F61E-446C-9841-470755340C07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTTANE", "TTTANE.csproj", "{2FE25DE2-3686-4774-A5C2-792EB119CDFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E59E4F9A-F61E-446C-9841-470755340C07}.Debug|x86.ActiveCfg = Debug|x86
-		{E59E4F9A-F61E-446C-9841-470755340C07}.Debug|x86.Build.0 = Debug|x86
-		{E59E4F9A-F61E-446C-9841-470755340C07}.Release|x86.ActiveCfg = Release|x86
-		{E59E4F9A-F61E-446C-9841-470755340C07}.Release|x86.Build.0 = Release|x86
+		{2FE25DE2-3686-4774-A5C2-792EB119CDFE}.Debug|x86.ActiveCfg = Debug|x86
+		{2FE25DE2-3686-4774-A5C2-792EB119CDFE}.Debug|x86.Build.0 = Debug|x86
+		{2FE25DE2-3686-4774-A5C2-792EB119CDFE}.Release|x86.ActiveCfg = Release|x86
+		{2FE25DE2-3686-4774-A5C2-792EB119CDFE}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
