@@ -63,7 +63,19 @@ namespace TTTANEtest
         //
         #endregion
 
+        /// <summary>
+        /// A test for player inserting name
+        /// Should return 'Playername'
+        /// If no name is entered return is "Player1"
+        /// </summary>
+        [TestMethod()]
+        public void Program()
+        {
+            Runner runner = new Runner();
+        }
 
+//Following test on Cosntructor() and Main() commented out for now since not really neccessary
+ /*
         /// <summary>
         ///A test for Program Constructor
         ///</summary>
@@ -85,5 +97,6 @@ namespace TTTANEtest
             Program_Accessor.Main(args);
             Assert.Inconclusive("A method that does not return a value cannot be verified.");
         }
+*/
     }
 }

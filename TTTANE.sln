@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTTANE", "TTTANE.csproj", "{2FE25DE2-3686-4774-A5C2-792EB119CDFE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTTANEtest", "TTTANEtest\TTTANEtest.csproj", "{191B522B-E364-4D76-8F05-BEAFD1193E86}"
@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{94FCB415-57D0-42C3-95B3-DDE927AAC1ED}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
+		README.txt = README.txt
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
 		TTTANE.vsmdi = TTTANE.vsmdi
 	EndProjectSection

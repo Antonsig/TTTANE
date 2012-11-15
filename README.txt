@@ -22,9 +22,11 @@ Is stringArray[0] or stringArray[1] left intentionally empty by player? if so th
 
 ----------------------------------------------------------------------
 Program.cs
-Ekki glóru,
-Héðan er leikurinn keyrður;
+Ætti að hafa kall í sér klasa sem er svo sjálfur run klasinn. Þannig náum við solid tdd unit testing.
+Héðan er kallað í Runner.cs
 
+
+Sem svo ætti að lúkka eitthvað í þessa áttina. 
 protected bool winner = false;
 
 While(winner == false)
