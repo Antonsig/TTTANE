@@ -7,6 +7,10 @@ namespace TTTANE
 {
     class User
     {
+        public User(String newmane)
+        {
+            name = newmane;
+        }
         public String name { get; set; }
     }
 }
