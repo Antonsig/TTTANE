@@ -9,6 +9,8 @@ namespace TTTANE
     {
         //Fall sem sækir input frá user
         //Fall sem checkar á winner
+		
+			
         //Fall sem skrifar út winner
         
         //Switch með öllum mögulegum vinninsmöguleikum
