@@ -7,10 +7,33 @@ namespace TTTANE
 {
     class User
     {
-        public User(String newmane)
+        public User(String newname)
         {
-            name = newmane;
+            if (newname.Length == 0)
+            {
+                name = "Player";
+            }
+            else
+            {
+                name = newname;
+            }
+            resetmoves();
+
         }
+
+        public int[,] moves = new int[5, 5];
+
         public String name { get; set; }
+
+        public void resetmoves()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                for(int j = 0; j < 5; j++)
+                {
+                    moves[i,j] = 0;
+                }
+            }
+        }
     }
 }
