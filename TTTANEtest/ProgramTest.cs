@@ -98,15 +98,6 @@ namespace TTTANEtest
             Assert.Inconclusive("A method that does not return a value cannot be verified.");
         }
 */
-        [TestMethod()]
-        public void TestUserNameReturned()
-        {
-            User User1 = new User("Anton");
-            User User2 = new User("Lena");
-
-            Assert.AreEqual("Anton", User1.name);
-            Assert.AreEqual("Lena", User2.name);
-        }
         
     }
 }
