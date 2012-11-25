@@ -12,7 +12,7 @@ namespace TTTANE
 
         public String name { get; set; }
         //two dimentional array with score value of each move
-        public int[,] boardvalue = { { 4, 3, 8 }, { 9, 5, 1 }, { 2, 7, 6 } };
+        public int[,] boardValue = { { 4, 3, 8 }, { 9, 5, 1 }, { 2, 7, 6 } };
         #endregion
 
         #region Class Methods
@@ -36,7 +36,7 @@ namespace TTTANE
         //triggers calculatearray function
         public void saveMove(int a, int b)
         {
-            moves[a, b] = boardvalue[a, b];
+            moves[a, b] = boardValue[a, b];
             calculateArray();
         }
 
@@ -146,14 +146,14 @@ namespace TTTANE
         #region Getters/Setters
         public int getBoardValue(int i, int j)
         {
-            return boardvalue[i,j];
+            return boardValue[i,j];
         }
 
         //Hvernig typecastar maður String inn í Int array? 
         //Inserts 'X' og 'O' into board.
         public void setBoardValue(int i, int j, String k)
         {
-            boardvalue[i, j] = (String)k;
+            //boardValue[i, j] = (String)k;
         }
         #endregion
     }
