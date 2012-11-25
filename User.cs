@@ -7,6 +7,15 @@ namespace TTTANE
 {
     class User
     {
+        #region Klasabreytur
+        public int[,] moves = new int[4, 4];
+
+        public String name { get; set; }
+        //two dimentional array with score value of each move
+        public int[,] boardvalue = { { 4, 3, 8 }, { 9, 5, 1 }, { 2, 7, 6 } };
+        #endregion
+
+        #region Class Methods
         public User(String newname)
         {
             if (newname.Length == 0)
@@ -18,28 +27,22 @@ namespace TTTANE
                 name = newname;
             }
 
-            resetmoves();
+            resetMoves();
         }
-
-        public int[,] moves = new int[4, 4];
-
-        public String name { get; set; }
-        
-        //two dimentional array with score value of each move
-        public int[,] boardvalue = {{4,3,8},{9,5,1},{2,7,6}};
+             
 
         //saves moves when the input has been fixed from user
         //allowed inputs are {0,1,2} to both parameters
         //triggers calculatearray function
-        public void savemove(int a, int b)
+        public void saveMove(int a, int b)
         {
             moves[a, b] = boardvalue[a, b];
-            calculatearray();
+            calculateArray();
         }
 
         //returns true if a row in moves has the sum of 15
         //otherwise false
-        public bool iswinner()
+        public bool isWinner()
         {
             bool winnerfound = false;
 
@@ -67,7 +70,7 @@ namespace TTTANE
         }
 
         //resets moves array to zero.
-        public void resetmoves()
+        public void resetMoves()
         {
             for (int i = 0; i < 3; i++)
             {
@@ -80,7 +83,7 @@ namespace TTTANE
 
         //calculates sums of a all rows in moves array.
         //winning row has the sum of 15
-        public void calculatearray()
+        public void calculateArray()
         {
             moves[0, 3] = moves[0, 0] + moves[0, 1] + moves[0, 2];
             moves[1, 3] = moves[1, 0] + moves[1, 1] + moves[1, 2];
@@ -94,7 +97,7 @@ namespace TTTANE
         //returns false if input from user is illegal
         //or if the move has already been made.
         //otherwise true
-        public bool parseinput(string s)
+        public bool parseInput(string s)
         {
             bool isok = false;
         
@@ -124,7 +127,7 @@ namespace TTTANE
                     if (moves[row, column] == 0)
                         {
                             isok = true;
-                            savemove(row, column);
+                            saveMove(row, column);
                             Console.WriteLine("Value is: {0}{1}", row, column);
                         }
                         else
@@ -137,5 +140,20 @@ namespace TTTANE
 
             return isok;
         }
+
+        #endregion
+
+        #region Getters/Setters
+        public int getBoardValue(int i, int j)
+        {
+            return boardvalue[i,j];
+        }
+
+        //Hvernig typecastar maður String inn í Int array? 
+        //Inserts 'X' og 'O' into board.
+        public void setBoardValue(int i, int j, String k)
+        {
+            boardvalue[i,j] = (String)k;
+
     }
 }

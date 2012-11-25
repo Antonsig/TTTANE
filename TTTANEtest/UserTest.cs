@@ -72,11 +72,11 @@ namespace TTTANEtest
             string move4 = "C54";
             string move5 = "";
 
-            Assert.IsTrue(User1.parseinput(move1));
-            Assert.IsTrue(User2.parseinput(move2));
-            Assert.IsFalse(User1.parseinput(move3));
-            Assert.IsFalse(User2.parseinput(move4));
-            Assert.IsFalse(User1.parseinput(move5));
+            Assert.IsTrue(User1.parseInput(move1));
+            Assert.IsTrue(User2.parseInput(move2));
+            Assert.IsFalse(User1.parseInput(move3));
+            Assert.IsFalse(User2.parseInput(move4));
+            Assert.IsFalse(User1.parseInput(move5));
         }
 
         /// <summary>
@@ -88,14 +88,14 @@ namespace TTTANEtest
             User User1 = new User("Player1");
             User User2 = new User("Player2");
 
-            User1.savemove(0, 0);
-            User2.savemove(1, 1);
-            User1.savemove(0, 1);
-            User2.savemove(2, 2);
-            User1.savemove(0, 2);
+            User1.saveMove(0, 0);
+            User2.saveMove(1, 1);
+            User1.saveMove(0, 1);
+            User2.saveMove(2, 2);
+            User1.saveMove(0, 2);
 
-            Assert.IsTrue(User1.iswinner());
-            Assert.IsFalse(User2.iswinner());
+            Assert.IsTrue(User1.isWinner());
+            Assert.IsFalse(User2.isWinner());
         }
 
         /// <summary>
@@ -107,9 +107,9 @@ namespace TTTANEtest
             User User1 = new User("Player1");
             User User2 = new User("Player2");
 
-            Assert.IsTrue(User1.parseinput("A3"));
-            Assert.IsTrue(User2.parseinput("B2"));
-            Assert.IsFalse(User1.parseinput("A3"));
+            Assert.IsTrue(User1.parseInput("A3"));
+            Assert.IsTrue(User2.parseInput("B2"));
+            Assert.IsFalse(User1.parseInput("A3"));
         }
     }
 }
