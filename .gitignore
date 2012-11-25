@@ -2,6 +2,7 @@
 bin
 obj
 *.suo
-
+TTT/
+_Resharper.TTTANE/
 # mstest test results
 TestResults
