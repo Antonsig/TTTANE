@@ -16,10 +16,12 @@ If getInput(String input) is empty, input failed, ask player again for input;
 
 ----------------------------------------------------------------------
 User.cs
-Does stringArray[0] insert correct names of players? (ie Player1 name is Bjarni, then is stringArray[0] == "Bjarni" ;
-Is stringArray[0] or stringArray[1] left intentionally empty by player? if so they should say Player1 or Player2;
-
-
+CHECK! Constructor insert correct names of player and if not the player is named "Player"
+CHECK! ParseInput takes a string from user from user in the form A1...C3 triggers savemove function with correct values.(if avaliable)
+CHECK! ParseInput returnes false if value is illegal or the move has already been made.
+CHECK! Total score is saved in moves[{0,3},{1,3},{2,3},{3,3},{3,0},{3,1},{3,2}] (If player has total score of 15 in each of these he wins!)\n;
+CHECK! Bool iswinner returns true if totalscore is 15 somewhere in totals.
+CHECK! resetmoves sets the values of all moves to 0.
 ----------------------------------------------------------------------
 Program.cs
 Ætti að hafa kall í sér klasa sem er svo sjálfur run klasinn. Þannig náum við solid tdd unit testing.
