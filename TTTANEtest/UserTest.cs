@@ -8,7 +8,7 @@ namespace TTTANEtest
     /// Testklasi fyrir User klasann og á að innihalda
     /// öll þau unit test sem gerð verða fyrir þann klasa.
     ///</summary>
-    
+
     [TestClass()]
     public class UserTest
     {
@@ -39,5 +39,5 @@ namespace TTTANEtest
             Assert.AreEqual("Player", User2.userName);
         }
 
- 
+    }
 }

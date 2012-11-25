@@ -39,9 +39,9 @@ namespace TTTANE
             return gameBoard[input];
         }
 
-        public void setGameBoard(int input)
+        public void setGameBoard(int i, String x)
         {
-            //TODO
+            gameBoard[i] = x;
         }
 
 
@@ -87,7 +87,7 @@ namespace TTTANE
 
             return winnerfound;
         }
-        */
+        
         /// <summary>
         /// Setur öll gildi í moves breytunni í 0.
         /// </summary>
@@ -164,9 +164,8 @@ namespace TTTANE
 
             return isok;
         }
-
-        #endregion
-
+    }
+#endregion
         #region Getters/Setters
         /// <summary>
         /// Skilar gildi vals notanda.
@@ -183,6 +182,6 @@ namespace TTTANE
         {
             moves[a, b] = boardValue[a, b];
             calculateArray();
-        }
+        }*/
     }
 }

@@ -14,20 +14,25 @@ namespace TTTANEtest
             _gameLogic = new GameLogic();
         }
 
-
+        /// <summary>
+        /// Prufar getGameBoard fall
+        /// </summary>
         [TestMethod()]
         public void TestSetMove()
         {
-            //TODO : Set X eða O á réttan stað í borði
-             //Frumstillir nýjan notanda með 'X'
-            User user1 = new User("X");
-            //Þá er user2 default gildi 'O'
-            User user2 = new User("O"); 
- 
-            _gameLogic.setGameBoard(3) = "X";
+            
+            String[] test = new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+            CollectionAssert.AreEqual(test, _gameLogic.getGameBoard());
+        }
+
+        /// <summary>
+        /// Prufar getGameBoardLocation(int i) fall sem skilar gildi í sæti i í gameBoard fylkinu
+        /// </summary>
+        [TestMethod()]
+        public void TestSetTicLocation()
+        {
+            _gameLogic.setGameBoard(3, "X");
             Assert.AreEqual("X", _gameLogic.getGameBoardLoc(3));
-            String[] test = new String[] { "1", "2", "3", "X", "5", "6", "7", "8", "9"};
-            Assert.AreEqual(test, _gameLogic.getGameBoard());
         }
 
         [TestMethod()]
@@ -38,7 +43,7 @@ namespace TTTANEtest
             return output;
         }
 
-        [TestMethod()]
+
 
         /*
        
@@ -124,6 +129,6 @@ namespace TTTANEtest
     }
          * */
 
-        
-    }
+
+    }   
 }
