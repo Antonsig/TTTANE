@@ -5,17 +5,29 @@ using System.Text;
 
 namespace TTTANE
 {
+    /// <summary>
+    ///  Klasinn geymir upplýsingar um notandann.
+    /// </summary>
     class User
     {
         #region Klasabreytur
+
         public int[,] moves = new int[4, 4];
 
         public String userName { get; set; }
-        //two dimentional array with score value of each move
+
+        /// <summary>
+        /// Tvívítt fylki sem inniheldur virði hvers vals fyrir útreikning
+        /// á vinningsröð.
+        /// </summary>
         public int[,] boardValue = { { 4, 3, 8 }, { 9, 5, 1 }, { 2, 7, 6 } };
         #endregion
 
         #region Class Methods
+        /// <summary>
+        ///  Smiður fyrir User klasann sem gefur honum nafnið Player ef
+        ///  ekkert nafn er valið.
+        /// </summary>
         public User(String newname)
         {
             if (newname.Length == 0)
@@ -29,12 +41,11 @@ namespace TTTANE
 
             resetMoves();
         }
-             
 
-
-
-        //returns true if a row in moves has the sum of 15
-        //otherwise false
+        /// <summary>
+        ///  Skilar True ef einhver röð gefur SUM 15
+        ///  annars false.
+        /// </summary>
         public bool isWinner()
         {
             bool winnerfound = false;
@@ -62,20 +73,24 @@ namespace TTTANE
             return winnerfound;
         }
 
-        //resets moves array to zero.
+        /// <summary>
+        /// Setur öll gildi í moves breytunni í 0.
+        /// </summary>
         public void resetMoves()
         {
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 4; i++)
             {
-                for(int j = 0; j < 3; j++)
+                for(int j = 0; j < 4; j++)
                 {
                     moves[i,j] = 0;
                 }
             }
         }
 
-        //calculates sums of a all rows in moves array.
-        //winning row has the sum of 15
+        /// <summary>
+        ///  Reiknar út samtalgildi úr innra 3x3 fylkinu.
+        ///  Ysti dálkurinn og neðsta röðin geyma gildin.
+        /// </summary>
         public void calculateArray()
         {
             moves[0, 3] = moves[0, 0] + moves[0, 1] + moves[0, 2];
@@ -87,9 +102,10 @@ namespace TTTANE
             moves[3, 0] = moves[0, 0] + moves[1, 0] + moves[2, 0];
         }
 
-        //returns false if input from user is illegal
-        //or if the move has already been made.
-        //otherwise true
+        /// <summary>
+        /// Skilar false ef val notanda er ekki leyft
+        /// eða reitur hefur þegar verið valinn. Annars True
+        /// </summary>
         public bool parseInput(string s)
         {
             bool isok = false;
@@ -137,14 +153,17 @@ namespace TTTANE
         #endregion
 
         #region Getters/Setters
+        /// <summary>
+        /// Skilar gildi vals notanda.
+        /// </summary>
         public int getBoardValue(int i, int j)
         {
             return boardValue[i,j];
         }
 
-        //saves moves when the input has been fixed from user
-        //allowed inputs are {0,1,2} to both parameters
-        //triggers calculatearray function
+        /// <summary>
+        /// Vistar val notanda og keyrir uppfærslu á moves-fylkið
+        /// </summary>
         public void setMove(int a, int b)
         {
             moves[a, b] = boardValue[a, b];

@@ -5,16 +5,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TTTANEtest
 {
     /// <summary>
-    ///This is a test class for User and is intended
-    ///to contain all UserTest Unit Tests
+    /// Testklasi fyrir User klasann og á að innihalda
+    /// öll þau unit test sem gerð verða fyrir þann klasa.
     ///</summary>
     
     [TestClass()]
     public class UserTest
     {
         /// <summary>
-        ///A test for User Constructor
-        ///Should return the name of the constructors string parameter.
+        /// Test fyrir smiðinn í User klasanum
+        /// Ætti að senda til baka sama streng og sett var í smiðinn.
         ///</summary>
         [TestMethod()]
         public void TestUserNameReturned()
@@ -25,8 +25,9 @@ namespace TTTANEtest
             Assert.AreEqual("Player1", User1.userName);
             Assert.AreEqual("Player2", User2.userName);
         }
+
         /// <summary>
-        ///A test for User constructore setting empty input to "Player"
+        /// Test fyrir smiðinn í User klasanum ef sendur er inn tómur strengur.
         ///</summary>
         [TestMethod()]
         public void TestUserNoNameReturned()
@@ -39,13 +40,16 @@ namespace TTTANEtest
         }
 
         /// <summary>
-        ///A test for User constructor resetting all moves to zero
+        /// Test fyrir resetMoves fallið sem 0stillir öll moves.
         ///</summary>
         [TestMethod()]
         public void TestUserMovesArrayReset()
         {
             User User1 = new User("Player1");
             User User2 = new User("Player2");
+
+            User1.setMove(2, 2);
+            User1.resetMoves();
 
             for (int i = 0; i < 4; i++)
             {
@@ -58,7 +62,8 @@ namespace TTTANEtest
         }
 
         /// <summary>
-        ///This test checks the parsing of the input string.
+        /// Test sem athugar hvort parsing fallið hleypir í gegn löglegum gildum
+        /// og returnar false ef svo er ekki.
         ///</summary>
         [TestMethod()]
         public void TestUserParseInput()
@@ -80,7 +85,8 @@ namespace TTTANEtest
         }
 
         /// <summary>
-        ///This test checks if there is a winning row.
+        /// Test sem athugar hvort isWinner returnar true á vinningsröð
+        /// of false ef svo er ekki.
         ///</summary>
         [TestMethod()]
         public void TestUserIsWinner()
@@ -99,7 +105,8 @@ namespace TTTANEtest
         }
 
         /// <summary>
-        ///This test checks if the move has aldready been made
+        /// Test sem athugar hvort leikur hefur þegar verið leikinn.
+        /// parseinput skilar false ef svo er en true ef svo er ekki.
         ///</summary>
         [TestMethod()]
         public void UserTestIfMoveHasBeenMade()
