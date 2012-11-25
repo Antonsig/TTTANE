@@ -1,7 +1,7 @@
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 bin
 obj
-*.suo
+TTTANE.V11.suo
 TTT/
 _Resharper.TTTANE/
 # mstest test results
