@@ -10,7 +10,7 @@ namespace TTTANE
         #region Klasabreytur
         public int[,] moves = new int[4, 4];
 
-        public String name { get; set; }
+        public String userName { get; set; }
         //two dimentional array with score value of each move
         public int[,] boardValue = { { 4, 3, 8 }, { 9, 5, 1 }, { 2, 7, 6 } };
         #endregion
@@ -20,25 +20,18 @@ namespace TTTANE
         {
             if (newname.Length == 0)
             {
-                name = "Player";
+                userName = "Player";
             }
             else
             {
-                name = newname;
+                userName = newname;
             }
 
             resetMoves();
         }
              
 
-        //saves moves when the input has been fixed from user
-        //allowed inputs are {0,1,2} to both parameters
-        //triggers calculatearray function
-        public void saveMove(int a, int b)
-        {
-            moves[a, b] = boardValue[a, b];
-            calculateArray();
-        }
+
 
         //returns true if a row in moves has the sum of 15
         //otherwise false
@@ -127,7 +120,7 @@ namespace TTTANE
                     if (moves[row, column] == 0)
                         {
                             isok = true;
-                            saveMove(row, column);
+                            setMove(row, column);
                             Console.WriteLine("Value is: {0}{1}", row, column);
                         }
                         else
@@ -149,12 +142,15 @@ namespace TTTANE
             return boardValue[i,j];
         }
 
-        //Hvernig typecastar maður String inn í Int array? 
-        //Inserts 'X' og 'O' into board.
-        public void setBoardValue(int i, int j, String k)
+        //saves moves when the input has been fixed from user
+        //allowed inputs are {0,1,2} to both parameters
+        //triggers calculatearray function
+        public void setMove(int a, int b)
         {
-            //boardValue[i, j] = (String)k;
+            moves[a, b] = boardValue[a, b];
+            calculateArray();
         }
+
         #endregion
     }
 }

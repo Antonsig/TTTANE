@@ -22,8 +22,8 @@ namespace TTTANEtest
             User User1 = new User("Player1");
             User User2 = new User("Player2");
 
-            Assert.AreEqual("Player1", User1.name);
-            Assert.AreEqual("Player2", User2.name);
+            Assert.AreEqual("Player1", User1.userName);
+            Assert.AreEqual("Player2", User2.userName);
         }
         /// <summary>
         ///A test for User constructore setting empty input to "Player"
@@ -34,8 +34,8 @@ namespace TTTANEtest
             User User1 = new User("");
             User User2 = new User("");
 
-            Assert.AreEqual("Player", User1.name);
-            Assert.AreEqual("Player", User2.name);
+            Assert.AreEqual("Player", User1.userName);
+            Assert.AreEqual("Player", User2.userName);
         }
 
         /// <summary>
@@ -88,11 +88,11 @@ namespace TTTANEtest
             User User1 = new User("Player1");
             User User2 = new User("Player2");
 
-            User1.saveMove(0, 0);
-            User2.saveMove(1, 1);
-            User1.saveMove(0, 1);
-            User2.saveMove(2, 2);
-            User1.saveMove(0, 2);
+            User1.setMove(0, 0);
+            User2.setMove(1, 1);
+            User1.setMove(0, 1);
+            User2.setMove(2, 2);
+            User1.setMove(0, 2);
 
             Assert.IsTrue(User1.isWinner());
             Assert.IsFalse(User2.isWinner());
