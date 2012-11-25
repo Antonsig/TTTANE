@@ -153,7 +153,8 @@ namespace TTTANE
         //Inserts 'X' og 'O' into board.
         public void setBoardValue(int i, int j, String k)
         {
-            boardvalue[i,j] = (String)k;
-
+            boardvalue[i, j] = (String)k;
+        }
+        #endregion
     }
 }
