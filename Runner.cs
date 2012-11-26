@@ -1,82 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using TTTANE;
 
 namespace TTTANE
 {
     public class Runner
     {
-        //private readonly TextReader _input;
-        //private readonly TextWriter _output;
-
-        //public Runner(TextReader input, TextWriter output)
-        //{
-        //    this._input = input;
-        //    this._output = output;
-        //}
         
         public virtual void Run()
         {
-            var game = new GameLogic();
+            var game = new GameLogic {CurrPlayer = "X"};
             Console.Title = "Awesome TicTacToe!";
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Welcome: Let's play some TicTacToe!");
             Console.ResetColor();
             Play(game);
-            //game.drawBoard();
-            //PlayerSelect(game);
-            
-            //throw new NotImplementedException();
         }
 
         public virtual void Play(GameLogic game)
         {
-            //while(!game.IsOver())
-            //{
-                game.drawBoard();
-                //var availableMoves = game.AvailableMoves;
-                //Console.WriteLine("Available moves are: " + availableMoves);
-                Console.WriteLine("Player: " + game.CurrPlayer + " make your move!");
-                var move = Convert.ToInt32(Console.ReadLine());
-                game.setPlayerInput(move, game.CurrPlayer);
-                //game.ChangePlayer(game.CurrPlayer);
- 
-                game.ChangePlayer();
-           // }
-        }
-        
-        public virtual void PlayerSelect(GameLogic game)
-        {
-            string name = null;
-            string xOrO = null;
-            for (var i = 1; i < 2; i++ )
+            do
             {
-                Console.WriteLine("Write your name if you want!");
-                var readName = Console.ReadLine();
-                if (readName != null) name = readName;
-                if(i==1)
+                game.DrawBoard();
+                Console.WriteLine("Player: " + game.CurrPlayer + " make your move!");
+                var move = Convert.ToInt32(Console.ReadLine()) - 1;
+                game.SetPlayerInput(move, game.CurrPlayer);
+                //game.CheckWinner();
+                game.ChangePlayer();
+            } while (!game.Winner);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Player " + game.CurrPlayer + " has won the game!");
+            Console.ResetColor();
+            string readLine;
+            do
+            {
+                Console.WriteLine("Play again? (Y)");
+                readLine = Console.ReadLine();
+                if (readLine != null)
                 {
-                    do
+                    var playAgain = readLine.ToUpper();
+                    if (playAgain == "Y")
                     {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Choose to play X or O!");
-                        Console.ResetColor();
-                        var readLine = Console.ReadLine();
-                        if (readLine != null) xOrO = readLine.ToUpper();
-                    } while (!"XO".Contains(xOrO));
+                        Run();
+                    }
                 }
-                SetUser(new User(name, xOrO));
-                xOrO = "XO".Replace(xOrO, "");
-            }
-        }
-
-        private void SetUser(User user)
-        {
-            Console.WriteLine(user.UserName+ "-" +user.Value);
+            } while (readLine!="N");
         }
     }
 }

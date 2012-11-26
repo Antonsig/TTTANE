@@ -1,5 +1,4 @@
-﻿using System;
-using TTTANE;
+﻿using TTTANE;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TTTANEtest
@@ -9,14 +8,14 @@ namespace TTTANEtest
     /// öll þau unit test sem gerð verða fyrir þann klasa.
     ///</summary>
 
-    [TestClass()]
+    [TestClass]
     public class UserTest
     {
         /// <summary>
         /// Test fyrir smiðinn í User klasanum
         /// Ætti að senda til baka sama streng og sett var í smiðinn.
         ///</summary>
-        [TestMethod()]
+        [TestMethod]
         public void TestUserNameReturned()
         {
             User User1 = new User("Player1","X");

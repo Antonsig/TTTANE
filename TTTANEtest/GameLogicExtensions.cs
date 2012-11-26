@@ -14,7 +14,7 @@ namespace TTTANEtest
             {
                 var player = move.Substring(0, 1);
                 var placeChecked = move.Substring(1);
-                game.setPlayerInput(Convert.ToInt32(placeChecked), player);
+                game.SetPlayerInput(Convert.ToInt32(placeChecked), player);
             }
         }
     }
