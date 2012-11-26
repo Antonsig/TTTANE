@@ -11,7 +11,7 @@ namespace TTTANE
         //Frumstillir borðið
         private String[] gameBoard = new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         //Mögulegar sigurleiðir
-        private String[][] winningCombinations = new[] 
+        protected String[][] winningCombinations = new[] 
             {
                 //Winning Rows [1,2,3]
                 new[] {"1","2","3"},
@@ -28,7 +28,9 @@ namespace TTTANE
                 new[] {"7","5","3"}
             };
         //Frumstilli Currplayer
-        public virtual string CurrPlayer { get; private set; }
+        public virtual string CurrPlayer { get; set; }
+
+        public bool winner { get; set; }
         #endregion
 
         
@@ -153,7 +155,18 @@ namespace TTTANE
             get { return gameBoard.Distinct().ToArray(); } //TODO: VIRKAR EKKI ÞARF AÐ PARSEA ÚT BARA INTEGERS
         }
 
-        public 
+        /// <summary>
+        /// Method til að athuga hvort kominn sé sigurvegari. Keyrir í gegnum winningCombinations[][] og athugar allar mögulegar útfærslur
+        /// </summary>
+        /// <param name="s">
+        /// 's' er annað hvort 'X' eða 'O'.
+        /// </param>
+
+        public void checkWinner(String s)
+        {
+            
+        }
+
 		
 
         

@@ -8,10 +8,29 @@ namespace TTTANEtest
     public class GameLogicTest
     {
         private GameLogic _gameLogic;
+
+        protected String[][] _winningCombinations = new[] 
+            {
+                //Winning Rows [1,2,3]
+                new[] {"1","2","3"},
+                new[] {"4","5","6"},
+                new[] {"7","8","9"},
+
+                //Winning Columns [1,2,3]
+                new[] {"1","4","7"},
+                new[] {"2","5","8"},
+                new[] {"3","6","9"},
+
+                //Winning Diagonals [1,2]
+                new[] {"1","5","9"},
+                new[] {"7","5","3"}
+            };
+
         [TestInitialize]
         public void InitializeGameLogic()
         {
             _gameLogic = new GameLogic();
+
         }
 
         /// <summary>
@@ -82,7 +101,9 @@ namespace TTTANEtest
         [TestMethod()]
         public void TestChangePlayer()
         {
-
+            _gameLogic.CurrPlayer = "X";
+            _gameLogic.ChangePlayer();
+            Assert.AreEqual("O", _gameLogic.CurrPlayer);
         }
 
         [TestMethod()]
@@ -91,6 +112,34 @@ namespace TTTANEtest
             var expected = new String[] {"2","5","6","7","9"};
             _gameLogic.PlayMoves("X1", "O3", "X4", "O8");
             CollectionAssert.AreEqual(expected, _gameLogic.AvailableMoves);
+        }
+
+        [TestMethod()]
+        public void TestCheckWinnerRow()
+        {
+            _gameLogic.CurrPlayer = "X";
+            //Gameboard
+            String[] expected = new String[] { "X", "X", "X" ,"O", "5", "O", "7", "8", "9"};
+            String[] values = new String[3];
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    values[j] = _winningCombinations[i][j];
+                }
+                if ((expected[Convert.ToInt32(values[0])] == expected[Convert.ToInt32(values[1])]) && (expected[Convert.ToInt32(values[1])] == expected[Convert.ToInt32(values[2])]))
+                {
+                    _gameLogic.winner = true;
+                }
+            }
+
+            Assert.AreEqual(true, _gameLogic.winner);
+
+                          /*
+            foreach(var position in _winningCombinations)
+            {
+                if(expected[position
+                          */
 
         }
         /*
