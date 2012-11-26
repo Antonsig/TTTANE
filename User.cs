@@ -14,7 +14,8 @@ namespace TTTANE
 
         //public int[,] moves = new int[4, 4];
 
-        public String userName { get ; set; }
+        public string UserName { get ; set; }
+        public string Value { get; set; }
         private int totNumberOfMoves;
         /// <summary>
         /// Tvívítt fylki sem inniheldur virði hvers vals fyrir útreikning
@@ -28,19 +29,11 @@ namespace TTTANE
         ///  Smiður fyrir User klasann sem gefur honum nafnið Player ef
         ///  ekkert nafn er valið.
         /// </summary>
-        public User(String newname)
+        public User(string newname, string value )
         {
-            if (newname.Length == 0)
-            {
-                userName = "Player";
-            }
-            else
-            {
-                userName = newname;
-            }
+            this.Value = value;
+            this.UserName = newname.Length == 0 ? "Player" : newname;
         }
-
-       
 
         #endregion
     }
