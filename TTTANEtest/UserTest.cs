@@ -19,11 +19,11 @@ namespace TTTANEtest
         [TestMethod()]
         public void TestUserNameReturned()
         {
-            User User1 = new User("Player1");
-            User User2 = new User("Player2");
+            User User1 = new User("Player1","X");
+            User User2 = new User("Player2", "O");
 
-            Assert.AreEqual("Player1", User1.userName);
-            Assert.AreEqual("Player2", User2.userName);
+            Assert.AreEqual("Player1", User1.UserName);
+            Assert.AreEqual("Player2", User2.UserName);
         }
 
         /// <summary>
@@ -32,11 +32,11 @@ namespace TTTANEtest
         [TestMethod()]
         public void TestUserNoNameReturned()
         {
-            User User1 = new User("");
-            User User2 = new User("");
+            User User1 = new User("", "X");
+            User User2 = new User("", "O");
 
-            Assert.AreEqual("Player", User1.userName);
-            Assert.AreEqual("Player", User2.userName);
+            Assert.AreEqual("Player", User1.UserName);
+            Assert.AreEqual("Player", User2.UserName);
         }
 
     }
