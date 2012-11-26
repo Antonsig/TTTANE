@@ -38,13 +38,14 @@ namespace TTTANE
         {
             //while(!game.IsOver())
             //{
-                
-                var availableMoves = game.AvailableMoves;
-                Console.WriteLine("Available moves are: " + availableMoves);
-               // Console.WriteLine("Player: " + currPlayer + " make your move!");
+                game.drawBoard();
+                //var availableMoves = game.AvailableMoves;
+                //Console.WriteLine("Available moves are: " + availableMoves);
+                Console.WriteLine("Player: " + game.CurrPlayer + " make your move!");
                 var move = Convert.ToInt32(Console.ReadLine());
-                //game.setPlayerInput(move, currPlayer);
-               // game.ChangePlayer(CurrPlayer);
+                game.setPlayerInput(move, game.CurrPlayer);
+                //game.ChangePlayer(game.CurrPlayer);
+                game.ChangePlayer();
            // }
         }
         

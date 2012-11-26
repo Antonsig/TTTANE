@@ -13,14 +13,17 @@ namespace TTTANE
         //Mögulegar sigurleiðir
         private String[][] winningCombinations = new[] 
             {
+                //Winning Rows [1,2,3]
                 new[] {"1","2","3"},
                 new[] {"4","5","6"},
                 new[] {"7","8","9"},
 
+                //Winning Columns [1,2,3]
                 new[] {"1","4","7"},
                 new[] {"2","5","8"},
                 new[] {"3","6","9"},
 
+                //Winning Diagonals [1,2]
                 new[] {"1","5","9"},
                 new[] {"7","5","3"}
             };
@@ -40,9 +43,19 @@ namespace TTTANE
             return gameBoard[input];
         }
 
-        public void setPlayerInput(int i, String x)
+        public bool setPlayerInput(int i, String x) 
         {
-            gameBoard[i] = x;
+            bool result = false;
+            if (gameBoard[i].Equals(x))
+            {
+                throw new InvalidMoveException("Nú þegar er : '{0}' í þessum reit, vinsamlega gerðu aftur", gameBoard[i] );
+            }
+            else
+            {
+                gameBoard[i] = x;
+                result =  true;
+            }
+            return result;
         }
 
         /// <summary>
@@ -100,26 +113,37 @@ namespace TTTANE
             return output;
         }
 
+        /// <summary>
+        /// Teiknar borðið, fyllir út í reiti eftir gameBoard[] sem er fylki sem geymir hvað er búið og hvað er eftir.
+        /// </summary>
         public void drawBoard()
         {
             int k = 0;
+            for (int l = 0; l < 4; l++)
+            {
+                Console.Write("- ");
+            }
+            Console.Write("\n");
             for (int i = 0; i < 3; i++)
             {
-
+                Console.Write("|");
                 for (int j = 0; j < 3; j++)
                 {
-                    Console.Write(gameBoard[k]);
+                    Console.Write(gameBoard[k] + "|");
                     k++;
                 }
                 Console.Write("\n");
-
             }
-            
+            for (int l = 0; l < 4; l++)
+            {
+                Console.Write("- ");
+            }
+            Console.Write("\n");
         }
         /// <summary>
         /// Skipti player úr X í O eða O í X eftir atvikum.
         /// </summary>
-        private void ChangePlayer()
+        public void ChangePlayer()
         {
             CurrPlayer = (CurrPlayer == "X" ? "O" : "X");
         }
@@ -129,8 +153,7 @@ namespace TTTANE
             get { return gameBoard.Distinct().ToArray(); } //TODO: VIRKAR EKKI ÞARF AÐ PARSEA ÚT BARA INTEGERS
         }
 
-        //Fall sem sækir input frá user
-        //Fall sem checkar á winner
+        public 
 		
 
         
