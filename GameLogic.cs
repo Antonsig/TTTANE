@@ -166,9 +166,24 @@ namespace TTTANE
         /// 's' er annað hvort 'X' eða 'O'.
         /// </param>
 
-        public void checkWinner(String s)
+        public bool checkWinner()
         {
-            
+            String[] values = new String[3];
+            for (int i = 0; i < 9 ; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    values[j] = winningCombinations[i][j];
+                }
+                if ((gameBoard[(Convert.ToInt32(values[0])) - 1] == gameBoard[(Convert.ToInt32(values[1])) - 1]) && (gameBoard[(Convert.ToInt32(values[1])) - 1] == gameBoard[(Convert.ToInt32(values[2])) - 1]))
+                {
+                    winner = true;
+                    return winner;
+                }
+            }
+
+            return false;
+
         }
 		
 
