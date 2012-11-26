@@ -10,27 +10,26 @@ namespace TTTANEtest
         private GameLogic _gameLogic;
 
         protected String[][] WinningCombinations = new[] 
-            {
-                //Winning Rows [1,2,3]
-                new[] {"1","2","3"},
-                new[] {"4","5","6"},
-                new[] {"7","8","9"},
+        {
+            //Winning Rows [1,2,3]
+            new[] {"1","2","3"},
+            new[] {"4","5","6"},
+            new[] {"7","8","9"},
 
-                //Winning Columns [1,2,3]
-                new[] {"1","4","7"},
-                new[] {"2","5","8"},
-                new[] {"3","6","9"},
+            //Winning Columns [1,2,3]
+            new[] {"1","4","7"},
+            new[] {"2","5","8"},
+            new[] {"3","6","9"},
 
-                //Winning Diagonals [1,2]
-                new[] {"1","5","9"},
-                new[] {"7","5","3"}
-            };
+            //Winning Diagonals [1,2]
+            new[] {"1","5","9"},
+            new[] {"7","5","3"}
+        };
 
         [TestInitialize]
         public void InitializeGameLogic()
         {
             _gameLogic = new GameLogic();
-
         }
 
         /// <summary>
@@ -38,8 +37,7 @@ namespace TTTANEtest
         /// </summary>
         [TestMethod]
         public void TestGetGameBoard()
-        {
-            
+        {           
             var test = new[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
             CollectionAssert.AreEqual(test, _gameLogic.GetGameBoard());
         }
@@ -113,44 +111,41 @@ namespace TTTANEtest
             //Gameboard
             var expected = new[] { "X", "X", "X" ,"O", "5", "O", "7", "8", "9"};
             var values = new string[3];
-      //      for (int i = 0; i < 1; i++)
-        //    {
             var i = 0;
-                for (var j = 0; j < 3; j++)
-                {
-                    values[j] = WinningCombinations[i][j];
-                }
-                if ((expected[(Convert.ToInt32(values[0])) - 1] == expected[(Convert.ToInt32(values[1])) - 1 ]) && (expected[(Convert.ToInt32(values[1])) -1] == expected[(Convert.ToInt32(values[2]))-1]))
-                {
-                    _gameLogic.Winner = true; 
-                }
-//            }
 
-            Assert.AreEqual(true, _gameLogic.Winner);
-
+            for (var j = 0; j < 3; j++)
+            {
+                values[j] = WinningCombinations[i][j];
+            }
+            
+			if ((expected[(Convert.ToInt32(values[0])) - 1] == expected[(Convert.ToInt32(values[1])) - 1 ]) && (expected[(Convert.ToInt32(values[1])) -1] == expected[(Convert.ToInt32(values[2]))-1]))
+            {
+                _gameLogic.Winner = true; 
+            }
+            
+			Assert.AreEqual(true, _gameLogic.Winner);
         }
-        [TestMethod]
+       
+		[TestMethod]
         public void TestCheckWinnerColumn()
         {
             _gameLogic.CurrPlayer = "X";
             //Gameboard
             var expected = new[] { "X", "2", "3", "X", "5", "O", "X", "8", "9" };
             var values = new String[3];
-            //      for (int i = 0; i < 1; i++)
-            //    {
             var i = 3;
-            for (var j = 0; j < 3; j++)
+            
+			for (var j = 0; j < 3; j++)
             {
                 values[j] = WinningCombinations[i][j];
             }
-            if ((expected[(Convert.ToInt32(values[0])) - 1] == expected[(Convert.ToInt32(values[1])) - 1]) && (expected[(Convert.ToInt32(values[1])) - 1] == expected[(Convert.ToInt32(values[2])) - 1]))
+           
+			if ((expected[(Convert.ToInt32(values[0])) - 1] == expected[(Convert.ToInt32(values[1])) - 1]) && (expected[(Convert.ToInt32(values[1])) - 1] == expected[(Convert.ToInt32(values[2])) - 1]))
             {
                 _gameLogic.Winner = true;
             }
-            //            }
 
             Assert.AreEqual(true, _gameLogic.Winner);
-
         }
 
         [TestMethod]
@@ -160,21 +155,19 @@ namespace TTTANEtest
             //Gameboard
             var expected = new[] { "X", "2", "3", "4", "X", "O", "7", "8", "X" };
             var values = new String[3];
-            //      for (int i = 0; i < 1; i++)
-            //    {
             var i = 6;
-            for (var j = 0; j < 3; j++)
+            
+			for (var j = 0; j < 3; j++)
             {
                 values[j] = WinningCombinations[i][j];
             }
-            if ((expected[(Convert.ToInt32(values[0])) - 1] == expected[(Convert.ToInt32(values[1])) - 1]) && (expected[(Convert.ToInt32(values[1])) - 1] == expected[(Convert.ToInt32(values[2])) - 1]))
+            
+			if ((expected[(Convert.ToInt32(values[0])) - 1] == expected[(Convert.ToInt32(values[1])) - 1]) && (expected[(Convert.ToInt32(values[1])) - 1] == expected[(Convert.ToInt32(values[2])) - 1]))
             {
                 _gameLogic.Winner = true;
             }
-            //            }
 
             Assert.AreEqual(true, _gameLogic.Winner);
-
         }
     }   
 }
