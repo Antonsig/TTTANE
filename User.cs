@@ -12,8 +12,8 @@ namespace TTTANE
     {
         #region Klasabreytur
 
-        //public int[,] moves = new int[4, 4];
-
+        
+        //userName
         public String userName { get ; set; }
         private int totNumberOfMoves;
         /// <summary>
