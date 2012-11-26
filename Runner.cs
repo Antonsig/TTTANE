@@ -23,9 +23,8 @@ namespace TTTANE
             var game = new GameLogic();
             Console.Title = "Awesome TicTacToe!";
             Console.BackgroundColor = ConsoleColor.White;
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Welcome: Let's play some TicTacToe!");
-            Console.WriteLine();
             Console.ResetColor();
             Play(game);
             //game.drawBoard();
