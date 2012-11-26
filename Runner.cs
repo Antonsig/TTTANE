@@ -5,7 +5,7 @@ namespace TTTANE
     public class Runner
     {
         /// <summary>
-        /// Initializes a new game, with X as the current player!
+        /// Byrjar nýjan leik, með X sem byrjunarleikmann!
         /// </summary>
         public virtual void Run()
         {
@@ -18,8 +18,9 @@ namespace TTTANE
             Play(game);
         }
         /// <summary>
-        /// Starts gameplay, calls functions from gamelogic and write's user promts to console.
+        /// Byrjar leikinn, kallar í föll frá gamelogic og skrifar svör notanda í console 
         /// </summary>
+		
         /// <param name="game"></param>
         public virtual void Play(GameLogic game)
         {
@@ -32,11 +33,13 @@ namespace TTTANE
                 game.SetPlayerInput(move, game.CurrPlayer);
                 game.CheckWinner();
             } while (!game.Winner);
+
             game.DrawBoard();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Player " + game.CurrPlayer + " has won the game!");
             Console.ResetColor();
             string readLine;
+
             do
             {
                 Console.WriteLine("Play again? (Y or N)");

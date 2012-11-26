@@ -4,14 +4,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace TTTANEtest
-{
-    
-    
+{    
     /// <summary>
     ///This is a test class for RunnerTest and is intended
     ///to contain all RunnerTest Unit Tests
     ///</summary>
-    [TestClass()]
+    
+	[TestClass()]
     public class RunnerTest
     {
         //private StringReader _input;
@@ -28,7 +27,8 @@ namespace TTTANEtest
             //standardOut.AutoFlush = true;
             //Console.SetOut(standardOut);
         }
-        /// <summary>
+        
+		/// <summary>
         ///A test for Runner Constructor
         ///</summary>
         [TestMethod]
@@ -40,12 +40,9 @@ namespace TTTANEtest
             //using (var sw = new StringWriter())
             //{
             //    Console.SetOut(sw);
-
             //    using (var sr = new StringReader("X"))
             //    {
             //        Console.SetIn(sr);
-                   
-
             //        var expected = string.Format("Choose X or O{0}X", Environment.NewLine);
             //        Assert.AreEqual<string>(expected, sw.ToString());
             //    }
@@ -56,21 +53,18 @@ namespace TTTANEtest
         }
 
        // [TestMethod]
-//public void ValidateConsoleOutput()
-//{
-//    using (StringWriter sw = new StringWriter())
-//    {
-//        Console.SetOut(sw);
- 
-//        ConsoleUser cu = new ConsoleUser();
-//        cu.DoWork();
- 
-//        string expected = 
-//            string.Format("Ploeh{0}", Environment.NewLine);
-//        Assert.AreEqual<string>(expected, sw.ToString());
-//    }
-//}
-
+		//public void ValidateConsoleOutput()
+		//{
+		//    using (StringWriter sw = new StringWriter())
+		//    {
+		//        Console.SetOut(sw);
+		//        ConsoleUser cu = new ConsoleUser();
+		//        cu.DoWork();
+		//        string expected = 
+		//            string.Format("Ploeh{0}", Environment.NewLine);
+		//        Assert.AreEqual<string>(expected, sw.ToString());
+		//    }
+		//}
 
         //[TestMethod]
         //public void ()
@@ -78,6 +72,5 @@ namespace TTTANEtest
         //    //TODO: Unit test to ask for player X or O
         //    Assert.Inconclusive("TODO: Implement code to verify target");
         //}
-
     }
 }
