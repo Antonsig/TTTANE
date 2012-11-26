@@ -121,27 +121,70 @@ namespace TTTANEtest
             //Gameboard
             String[] expected = new String[] { "X", "X", "X" ,"O", "5", "O", "7", "8", "9"};
             String[] values = new String[3];
-            for (int i = 0; i < 8; i++)
-            {
+      //      for (int i = 0; i < 1; i++)
+        //    {
+            int i = 0;
                 for (int j = 0; j < 3; j++)
                 {
                     values[j] = _winningCombinations[i][j];
                 }
-                if ((expected[Convert.ToInt32(values[0])] == expected[Convert.ToInt32(values[1])]) && (expected[Convert.ToInt32(values[1])] == expected[Convert.ToInt32(values[2])]))
+                if ((expected[(Convert.ToInt32(values[0])) - 1] == expected[(Convert.ToInt32(values[1])) - 1 ]) && (expected[(Convert.ToInt32(values[1])) -1] == expected[(Convert.ToInt32(values[2]))-1]))
                 {
-                    _gameLogic.winner = true;
+                    _gameLogic.winner = true; 
                 }
-            }
+//            }
 
             Assert.AreEqual(true, _gameLogic.winner);
 
-                          /*
-            foreach(var position in _winningCombinations)
+        }
+        [TestMethod()]
+        public void TestCheckWinnerColumn()
+        {
+            _gameLogic.CurrPlayer = "X";
+            //Gameboard
+            String[] expected = new String[] { "X", "2", "3", "X", "5", "O", "X", "8", "9" };
+            String[] values = new String[3];
+            //      for (int i = 0; i < 1; i++)
+            //    {
+            int i = 3;
+            for (int j = 0; j < 3; j++)
             {
-                if(expected[position
-                          */
+                values[j] = _winningCombinations[i][j];
+            }
+            if ((expected[(Convert.ToInt32(values[0])) - 1] == expected[(Convert.ToInt32(values[1])) - 1]) && (expected[(Convert.ToInt32(values[1])) - 1] == expected[(Convert.ToInt32(values[2])) - 1]))
+            {
+                _gameLogic.winner = true;
+            }
+            //            }
+
+            Assert.AreEqual(true, _gameLogic.winner);
 
         }
+
+        [TestMethod()]
+        public void TestCheckWinnerDiagonal()
+        {
+            _gameLogic.CurrPlayer = "X";
+            //Gameboard
+            String[] expected = new String[] { "X", "2", "3", "4", "X", "O", "7", "8", "X" };
+            String[] values = new String[3];
+            //      for (int i = 0; i < 1; i++)
+            //    {
+            int i = 6;
+            for (int j = 0; j < 3; j++)
+            {
+                values[j] = _winningCombinations[i][j];
+            }
+            if ((expected[(Convert.ToInt32(values[0])) - 1] == expected[(Convert.ToInt32(values[1])) - 1]) && (expected[(Convert.ToInt32(values[1])) - 1] == expected[(Convert.ToInt32(values[2])) - 1]))
+            {
+                _gameLogic.winner = true;
+            }
+            //            }
+
+            Assert.AreEqual(true, _gameLogic.winner);
+
+        }
+
         /*
        
         /// <summary>
