@@ -35,14 +35,24 @@ namespace TTTANEtest
             Assert.AreEqual("X", _gameLogic.getGameBoardLoc(3));
         }
 
+        /// <summary>
+        /// Skilar hvað er í sæti i í gameBoard fylkinu
+        /// </summary>
+        /// <returns></returns>
         [TestMethod()]
-        public String TestGetBoardLocation()
+        public void TestGetBoardLocation()
         {
             //INFO: Sækir hvað er í [x] reit á borði
-            String output = null;
-            return output;
+            String output = "6";
+            Assert.AreEqual(output, _gameLogic.getGameBoardLoc(5));
         }
 
+        [TestMethod()]
+        public void TestGetWinningCombinationRow()
+        {
+            String[] expected = new String[] { "1", "2", "3" };
+            CollectionAssert.AreEqual(expected, _gameLogic.getWinningCombinationRow(1));
+        }
 
 
         /*
