@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TTTANE
 {
-    class GameLogic
+    public class GameLogic
     {
         #region Member breytur
         //Frumstillir borðið
