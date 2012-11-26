@@ -85,6 +85,14 @@ namespace TTTANEtest
 
         }
 
+        [TestMethod()]
+        public void TestGetAvailableMoves()
+        {
+            var expected = new String[] {"2","5","6","7","9"};
+            _gameLogic.PlayMoves("X1", "O3", "X4", "O8");
+            CollectionAssert.AreEqual(expected, _gameLogic.AvailableMoves);
+
+        }
         /*
        
         /// <summary>

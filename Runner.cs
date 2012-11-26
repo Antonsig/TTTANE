@@ -27,11 +27,27 @@ namespace TTTANE
             Console.WriteLine("Welcome: Let's play some TicTacToe!");
             Console.WriteLine();
             Console.ResetColor();
-            game.drawBoard();
-            PlayerSelect(game);
+            Play(game);
+            //game.drawBoard();
+            //PlayerSelect(game);
             
             //throw new NotImplementedException();
         }
+
+        public virtual void Play(GameLogic game)
+        {
+            //while(!game.IsOver())
+            //{
+                
+                var availableMoves = game.AvailableMoves;
+                Console.WriteLine("Available moves are: " + availableMoves);
+               // Console.WriteLine("Player: " + currPlayer + " make your move!");
+                var move = Convert.ToInt32(Console.ReadLine());
+                //game.setPlayerInput(move, currPlayer);
+               // game.ChangePlayer(CurrPlayer);
+           // }
+        }
+        
         public virtual void PlayerSelect(GameLogic game)
         {
             string name = null;

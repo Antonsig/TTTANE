@@ -24,7 +24,8 @@ namespace TTTANE
                 new[] {"1","5","9"},
                 new[] {"7","5","3"}
             };
-
+        //Frumstilli Currplayer
+        public virtual string CurrPlayer { get; private set; }
         #endregion
 
         
@@ -115,9 +116,18 @@ namespace TTTANE
             }
             
         }
-        
+        /// <summary>
+        /// Skipti player úr X í O eða O í X eftir atvikum.
+        /// </summary>
+        private void ChangePlayer()
+        {
+            CurrPlayer = (CurrPlayer == "X" ? "O" : "X");
+        }
 
-
+        public virtual string[] AvailableMoves
+        {
+            get { return gameBoard.Distinct().ToArray(); } //TODO: VIRKAR EKKI ÞARF AÐ PARSEA ÚT BARA INTEGERS
+        }
 
         //Fall sem sækir input frá user
         //Fall sem checkar á winner
