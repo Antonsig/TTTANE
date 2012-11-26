@@ -45,6 +45,7 @@ namespace TTTANE
                 var move = Convert.ToInt32(Console.ReadLine());
                 game.setPlayerInput(move, game.CurrPlayer);
                 //game.ChangePlayer(game.CurrPlayer);
+ 
                 game.ChangePlayer();
            // }
         }
