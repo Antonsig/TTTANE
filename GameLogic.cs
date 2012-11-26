@@ -123,6 +123,8 @@ namespace TTTANE
             {
                 Console.Write("- ");
             }
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.Write("\n");
             for (int i = 0; i < 3; i++)
             {
@@ -134,11 +136,13 @@ namespace TTTANE
                 }
                 Console.Write("\n");
             }
+            Console.ResetColor();
             for (int l = 0; l < 4; l++)
             {
                 Console.Write("- ");
             }
             Console.Write("\n");
+            
         }
         /// <summary>
         /// Skipti player úr X í O eða O í X eftir atvikum.
@@ -153,7 +157,7 @@ namespace TTTANE
             get { return gameBoard.Distinct().ToArray(); } //TODO: VIRKAR EKKI ÞARF AÐ PARSEA ÚT BARA INTEGERS
         }
 
-        public 
+        //public 
 		
 
         
