@@ -1,4 +1,5 @@
-﻿using TTTANE;
+﻿using System.IO;
+using TTTANE;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
@@ -13,65 +14,70 @@ namespace TTTANEtest
     [TestClass()]
     public class RunnerTest
     {
-
-
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
+        //private StringReader _input;
+        //private StringWriter _output;
+        private Runner _runner;
+        
+        [TestInitialize]
+        public void InitializeRunner()
         {
-            get
-            {
-                return testContextInstance;
-            }
-            set
-            {
-                testContextInstance = value;
-            }
+            //_input = new StringReader();
+            //_output = new StringWriter();
+            _runner = new Runner();
+            //var standardOut = new StreamWriter(Console.OpenStandardOutput());
+            //standardOut.AutoFlush = true;
+            //Console.SetOut(standardOut);
         }
-
-        #region Additional test attributes
-        // 
-        //You can use the following additional attributes as you write your tests:
-        //
-        //Use ClassInitialize to run code before running the first test in the class
-        //[ClassInitialize()]
-        //public static void MyClassInitialize(TestContext testContext)
-        //{
-        //}
-        //
-        //Use ClassCleanup to run code after all tests in a class have run
-        //[ClassCleanup()]
-        //public static void MyClassCleanup()
-        //{
-        //}
-        //
-        //Use TestInitialize to run code before running each test
-        //[TestInitialize()]
-        //public void MyTestInitialize()
-        //{
-        //}
-        //
-        //Use TestCleanup to run code after each test has run
-        //[TestCleanup()]
-        //public void MyTestCleanup()
-        //{
-        //}
-        //
-        #endregion
-
-
         /// <summary>
         ///A test for Runner Constructor
         ///</summary>
-        [TestMethod()]
-        public void RunnerConstructorTest()
+        [TestMethod]
+        public void IsRunnerRunning()
         {
-            Runner target = new Runner();
-            Assert.Inconclusive("TODO: Implement code to verify target");
+            //_runner 
+            //var output =
+            //Assert.AreEqual<string>(output, _runner.PlayerSelect());
+            //using (var sw = new StringWriter())
+            //{
+            //    Console.SetOut(sw);
+
+            //    using (var sr = new StringReader("X"))
+            //    {
+            //        Console.SetIn(sr);
+                   
+
+            //        var expected = string.Format("Choose X or O{0}X", Environment.NewLine);
+            //        Assert.AreEqual<string>(expected, sw.ToString());
+            //    }
+            //}
+            //TODO: Unit test to ask for player X or O
+            //var askForPlayer = "Choose X or O";
+            //Assert.AreEqual("X", player);
         }
+
+       // [TestMethod]
+//public void ValidateConsoleOutput()
+//{
+//    using (StringWriter sw = new StringWriter())
+//    {
+//        Console.SetOut(sw);
+ 
+//        ConsoleUser cu = new ConsoleUser();
+//        cu.DoWork();
+ 
+//        string expected = 
+//            string.Format("Ploeh{0}", Environment.NewLine);
+//        Assert.AreEqual<string>(expected, sw.ToString());
+//    }
+//}
+
+
+        //[TestMethod]
+        //public void ()
+        //{
+        //    //TODO: Unit test to ask for player X or O
+        //    Assert.Inconclusive("TODO: Implement code to verify target");
+        //}
+
     }
 }
