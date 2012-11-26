@@ -39,10 +39,84 @@ namespace TTTANE
             return gameBoard[input];
         }
 
-        public void setGameBoard(int i, String x)
+        public void setPlayerInput(int i, String x)
         {
             gameBoard[i] = x;
         }
+
+        /// <summary>
+        /// Skilar Röð úr WinningCombination[][]
+        /// </summary>
+        /// <param name="i">i er númer raðar</param>
+        /// <returns>
+        /// Streng sem er 3 á lengd og inniheldur röð úr WinningCombination[][]
+        /// </returns>
+        public String[] getWinningCombinationRow(int i)
+        {
+            String[] output = new String[3];
+            for (int j = 0; j < 3; j++)
+            {
+                output.SetValue(winningCombinations[i][j], j);
+            }
+
+            return output;
+         }
+
+        /// <summary>
+        /// Skilar dálk úr WinningCombination[][]
+        /// </summary>
+        /// <param name="i">i er númer dálks</param>
+        /// <returns>
+        /// Streng sem er 3 á lengd og inniheldur dálk úr WinningCombination[][]
+        /// </returns>
+        public String[] getWinningCombinationColumn(int i)
+        {
+            i = i + 3;
+            String[] output = new String[3];
+            for (int j = 0; j < 3; j++)
+            {
+                output.SetValue(winningCombinations[i][j], j);
+            }
+
+            return output;
+        }
+
+        /// <summary>
+        /// Skilar hornréttri línu úr WinningCombination[][]
+        /// </summary>
+        /// <param name="i">i er númer hornréttrar línu ( 1 = 1,5,9 og 2 = 3,5,7 )</param>
+        /// <returns>
+        /// Streng sem er 3 á lengd og inniheldur diagonal úr WinningCombination[][]
+        /// </returns>
+        public String[] getWinningCombinationDiagonal(int i)
+        {
+            i = i + 6;
+            String[] output = new String[3];
+            for (int j = 0; j < 3; j++)
+            {
+                output.SetValue(winningCombinations[i][j], j);
+            }
+            return output;
+        }
+
+        public void drawBoard()
+        {
+            int k = 0;
+            for (int i = 0; i < 3; i++)
+            {
+
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(gameBoard[k]);
+                    k++;
+                }
+                Console.Write("\n");
+
+            }
+            
+        }
+        
+
 
 
         //Fall sem sækir input frá user

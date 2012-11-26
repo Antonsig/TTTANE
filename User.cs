@@ -12,10 +12,9 @@ namespace TTTANE
     {
         #region Klasabreytur
 
-        //public int[,] moves = new int[4, 4];
-
         public string UserName { get ; set; }
         public string Value { get; set; }
+
         private int totNumberOfMoves;
         /// <summary>
         /// Tvívítt fylki sem inniheldur virði hvers vals fyrir útreikning

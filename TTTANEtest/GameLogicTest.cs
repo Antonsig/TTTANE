@@ -31,19 +31,59 @@ namespace TTTANEtest
         [TestMethod()]
         public void TestSetTicLocation()
         {
-            _gameLogic.setGameBoard(3, "X");
+            _gameLogic.setPlayerInput(3, "X");
             Assert.AreEqual("X", _gameLogic.getGameBoardLoc(3));
         }
 
+        /// <summary>
+        /// Skilar hvað er í sæti i í gameBoard fylkinu
+        /// </summary>
         [TestMethod()]
-        public String TestGetBoardLocation()
+        public void TestGetBoardLocation()
         {
             //INFO: Sækir hvað er í [x] reit á borði
-            String output = null;
-            return output;
+            String output = "6";
+            Assert.AreEqual(output, _gameLogic.getGameBoardLoc(5));
         }
 
+        /// <summary>
+        /// Prófar getWinningCombinationRow(int i) sem skilar röð úr winningCimbinations fylkinu
+        /// </summary>
+        [TestMethod()]
+        public void TestGetWinningCombinationRow()
+        {
+            String[] expected = new String[] { "1", "2", "3" };
+            CollectionAssert.AreEqual(expected, _gameLogic.getWinningCombinationRow(0));
+        }
 
+        /// <summary>
+        /// Prófar getWinningCombinationColumn(int i) sem skilar dálki úr winningCombinations fylkinu 
+        /// </summary>
+        [TestMethod()]
+        public void TestGetWinningCombinationColumn()
+        {
+            String[] expected = new String[] { "1", "4", "7" };
+            CollectionAssert.AreEqual(expected, _gameLogic.getWinningCombinationColumn(0));
+        }
+
+        /// <summary>
+        /// Prófar getWinningCombinationDiagonal(int i) sem skilar hornréttri línu úr winningCombination fylkinu
+        /// </summary>
+        [TestMethod()]
+        public void TestGetWinningCombinationDiagonal()
+        {
+            String[] expected = new String[] {"1","5", "9"};
+            CollectionAssert.AreEqual(expected, _gameLogic.getWinningCombinationDiagonal(0));
+        }
+
+        /// <summary>
+        /// Prófar changePlayer() fallið sem sér um að halda utan um hver á að gera
+        /// </summary>
+        [TestMethod()]
+        public void TestChangePlayer()
+        {
+
+        }
 
         /*
        
