@@ -30,8 +30,6 @@ namespace TTTANE
         public bool Winner { get; set; }
         #endregion
 
-        
-
         public String[] GetGameBoard()
         {
             return GameBoard;
@@ -152,7 +150,7 @@ namespace TTTANE
         public bool CheckWinner()
         {
             var values = new String[3];
-            for (var i = 0; i < 9 ; i++)
+            for (var i = 0; i < 8 ; i++)
             {
                 for (var j = 0; j < 3; j++)
                 {

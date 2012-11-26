@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTTANE", "TTTANE.csproj", "{2FE25DE2-3686-4774-A5C2-792EB119CDFE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTTANEtest", "TTTANEtest\TTTANEtest.csproj", "{191B522B-E364-4D76-8F05-BEAFD1193E86}"

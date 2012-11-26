@@ -4,10 +4,12 @@ namespace TTTANE
 {
     public class Runner
     {
-        
+        /// <summary>
+        /// Initializes a new game, with X as the current player!
+        /// </summary>
         public virtual void Run()
         {
-            var game = new GameLogic {CurrPlayer = "X"};
+            var game = new GameLogic {CurrPlayer = "O"};
             Console.Title = "Awesome TicTacToe!";
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
@@ -15,25 +17,29 @@ namespace TTTANE
             Console.ResetColor();
             Play(game);
         }
-
+        /// <summary>
+        /// Starts gameplay, calls functions from gamelogic and write's user promts to console.
+        /// </summary>
+        /// <param name="game"></param>
         public virtual void Play(GameLogic game)
         {
             do
             {
+                game.ChangePlayer();
                 game.DrawBoard();
                 Console.WriteLine("Player: " + game.CurrPlayer + " make your move!");
                 var move = Convert.ToInt32(Console.ReadLine()) - 1;
                 game.SetPlayerInput(move, game.CurrPlayer);
-                //game.CheckWinner();
-                game.ChangePlayer();
+                game.CheckWinner();
             } while (!game.Winner);
+            game.DrawBoard();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Player " + game.CurrPlayer + " has won the game!");
             Console.ResetColor();
             string readLine;
             do
             {
-                Console.WriteLine("Play again? (Y)");
+                Console.WriteLine("Play again? (Y or N)");
                 readLine = Console.ReadLine();
                 if (readLine != null)
                 {
